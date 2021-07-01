@@ -6,9 +6,10 @@ import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
 import {HomeComponent} from './home/home.component';
 import {AuthService} from './api/auth.service';
-import { MenuComponent } from './menu/menu.component';
-import { ItemListComponent } from './item-list/item-list.component';
-import { ItemComponent } from './item/item.component';
+import {MenuComponent} from './menu/menu.component';
+import {ItemListComponent} from './item-list/item-list.component';
+import {ItemComponent} from './item/item.component';
+import {ProductService} from "./api/product.service";
 
 @NgModule({
   declarations: [
@@ -25,7 +26,7 @@ import { ItemComponent } from './item/item.component';
     ReactiveFormsModule,
     HttpClientModule
   ],
-  providers: [AuthService],
+  providers: [AuthService,ProductService],
   bootstrap: [AppComponent]
 })
 export class AppModule {

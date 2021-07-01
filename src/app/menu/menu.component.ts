@@ -7,7 +7,20 @@ import {Router} from "@angular/router";
   styleUrls: ['./menu.component.scss']
 })
 export class MenuComponent implements OnInit {
-
+  navItems=[
+    {
+      name:"INICIO",
+      route:"/products"
+    },
+    {
+      name:"GPU",
+      route:"/products?category=GPU"
+    },
+    {
+      name:"CPU",
+      route:"/products?category=CPU"
+    }
+  ]
   constructor(private router: Router) {
   }
 

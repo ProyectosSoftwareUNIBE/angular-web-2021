@@ -1,1 +1,10 @@
-<p>item-list works!</p>
+<div class="row">
+  <div class="card col-lg-4 col-sm-6" *ngFor="let product of products" (click)="navigateToProduct(product)" >
+    <img class="card-img-top img-fluid" src="{{product.image}}" alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title">{{product.name}}</h5>
+      <p class="card-text">$ {{product.price}}</p>
+    </div>
+  </div>
+</div>
+

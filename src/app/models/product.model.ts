@@ -4,5 +4,5 @@ export interface ProductModel {
     code?: string;
     price?: number;
     category?: string;
-
+    image?: string;
 }
