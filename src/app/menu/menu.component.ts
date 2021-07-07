@@ -19,6 +19,10 @@ export class MenuComponent implements OnInit {
     {
       name:"CPU",
       route:"/products?category=CPU"
+    },
+    {
+      name:"Carrito de Compras",
+      route:"/shopping-cart"
     }
   ]
   constructor(private router: Router) {

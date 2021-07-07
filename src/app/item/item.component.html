@@ -3,6 +3,7 @@
   <div class="card-body">
     <img class="card-img-top img-fluid" src="{{product.image}}" alt="Card image cap">
     <p class="card-text">$ {{product.price}}</p>
-    <button class="btn btn-info">Agregar</button>
+    <input type="number" class="form-control" placeholder="cantidad" [(ngModel)]="amount"/>
+    <button class="btn btn-info" (click)="addItem()">Agregar</button>
   </div>
 </div>

@@ -10,6 +10,8 @@ import {MenuComponent} from './menu/menu.component';
 import {ItemListComponent} from './item-list/item-list.component';
 import {ItemComponent} from './item/item.component';
 import {ProductService} from "./api/product.service";
+import {ShoppingCartService} from "./api/shopping-cart.service";
+import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +19,8 @@ import {ProductService} from "./api/product.service";
     HomeComponent,
     MenuComponent,
     ItemListComponent,
-    ItemComponent
+    ItemComponent,
+    ShoppingCartComponent
   ],
   imports: [
     BrowserModule,
@@ -26,7 +29,11 @@ import {ProductService} from "./api/product.service";
     ReactiveFormsModule,
     HttpClientModule
   ],
-  providers: [AuthService,ProductService],
+  providers: [
+    AuthService,
+    ProductService,
+    ShoppingCartService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule {
