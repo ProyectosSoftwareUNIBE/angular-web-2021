@@ -13,7 +13,7 @@ import {ItemModel} from "../models/item.model";
 export class ItemComponent implements OnInit {
   static END_POINT = 'product/:id';
   private readonly id: string | null;
-  public product: ProductModel = {};
+  public product: ProductModel = {price:0};
   public amount:number=0;
 
   constructor(private route: ActivatedRoute, private productService: ProductService, private shoppingCarService: ShoppingCartService) {
@@ -32,8 +32,7 @@ export class ItemComponent implements OnInit {
   }
 
   addItem(): void {
-    let item:ItemModel={};
-    item={amount: this.amount,product: this.product};
+    let item:ItemModel={amount: this.amount,product: this.product};
     this.shoppingCarService.addItem(item);
   }
 

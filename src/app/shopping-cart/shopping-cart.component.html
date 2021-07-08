@@ -1,0 +1,31 @@
+<div *ngIf="items.length<1">
+  <h3>No tiene productos</h3>
+</div>
+<div *ngIf="items.length>0">
+  <table class="table table-dark table-striped">
+    <thead>
+    <tr>
+      <th scope="col">Producto</th>
+      <th scope="col">Precio c/u</th>
+      <th scope="col">Cantidad</th>
+      <th scope="col">Total</th>
+      <th scope="col"></th>
+    </tr>
+    </thead>
+    <tbody>
+
+    <tr *ngFor="let item of items;let position=index">
+      <td>{{item.product.name}}</td>
+      <td>$ {{item.product.price}}</td>
+      <td>{{item.amount}}</td>
+      <td>Total $ {{item.product.price * item.amount}}</td>
+      <td>
+        <button class="btn btn-danger" (click)="deleteItem(position)">eliminar</button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+  <div>
+    <h4>El total a pagar es: ${{total}}</h4>
+  </div>
+</div>

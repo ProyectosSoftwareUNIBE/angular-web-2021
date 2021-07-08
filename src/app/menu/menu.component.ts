@@ -13,17 +13,21 @@ export class MenuComponent implements OnInit {
       route:"/products"
     },
     {
-      name:"GPU",
-      route:"/products?category=GPU"
-    },
-    {
-      name:"CPU",
-      route:"/products?category=CPU"
-    },
-    {
       name:"Carrito de Compras",
       route:"/shopping-cart"
     }
+  ]
+  navItems2=[
+    
+    {
+      name:"GPU",
+      route:"/products/GPU"
+    },
+    {
+      name:"CPU",
+      route:"/products/CPU"
+    }
+
   ]
   constructor(private router: Router) {
   }
@@ -34,6 +38,10 @@ export class MenuComponent implements OnInit {
 
   canBeActivate(): void {
     if (localStorage.getItem('user') === '' || localStorage.getItem('user') === null) this.router.navigate([''])
+  }
+
+  test(nav:any):void{
+    this.router.navigate([nav.route]);
   }
 
 
