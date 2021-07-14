@@ -10,9 +10,10 @@ import {ItemModel} from "../models/item.model";
 export class ShoppingCartComponent implements OnInit {
   static END_POINT = 'shopping-cart';
   public items: ItemModel[];
-  public total:number=0;
+  public total: number = 0;
+
   constructor(private shoppingCartService: ShoppingCartService) {
-    this.items=[]
+    this.items = []
   }
 
   ngOnInit(): void {
@@ -21,12 +22,18 @@ export class ShoppingCartComponent implements OnInit {
 
   synch(): void {
     this.items = this.shoppingCartService.getShoppingCart();
-    this.total=this.shoppingCartService.getTotal();
+    this.total = this.shoppingCartService.getTotal();
   }
 
-  deleteItem(position:number):void{
+  deleteItem(position: number): void {
     this.shoppingCartService.deleteItem(position);
     this.synch();
+  }
+
+  send(): void {
+    this.shoppingCartService.sendShoppingCart().subscribe(
+      data => console.log(data)
+    );
   }
 
 }
